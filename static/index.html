@@ -27,8 +27,7 @@
     async function scrapeUrl() {
       const url = document.getElementById('scrapeInput').value.trim();
       if (!url) return;
-      const deep = document.getElementById('deep').checked ? '&deep=true' : '';
-      const res = await fetch(`/scrape/url?url=${encodeURIComponent(url)}${deep}`, { method: 'POST' });
+      const res = await fetch(`/scrape/url?url=${encodeURIComponent(url)}&deep=true`, { method: 'POST' });
       const data = await res.json();
       document.getElementById('scrapeResult').textContent = JSON.stringify(data, null, 2);
       await loadCases();
@@ -37,8 +36,7 @@
     async function scrapeQuery() {
       const q = document.getElementById('queryInput').value.trim();
       if (!q) return;
-      const deep = document.getElementById('deep').checked ? '&deep=true' : '';
-      const res = await fetch(`/scrape/search?q=${encodeURIComponent(q)}${deep}`, { method: 'POST' });
+      const res = await fetch(`/scrape/search?q=${encodeURIComponent(q)}&deep=true`, { method: 'POST' });
       const data = await res.json();
       document.getElementById('scrapeResult').textContent = JSON.stringify(data, null, 2);
       await loadCases();
@@ -77,6 +75,8 @@
           ${data.summary ? `<div class="badge">Summary</div><pre style="white-space:pre-wrap">${data.summary}</pre>` : ''}
           <div class="row">
             <button onclick="summarize(${id})">Summarize</button>
+            <input id="chatq" size="40" placeholder="Ask about this case..." />
+            <button onclick="chatCase(${id})" class="secondary">Ask</button>
           </div>
           <pre style="white-space:pre-wrap">${(data.content_text || '').slice(0, 4000)}</pre>
           <div>Documents:</div>
@@ -107,7 +107,7 @@
     <button onclick="scrapeQuery()">Search & Scrape</button>
   </div>
   <div class="row">
-    <label><input type="checkbox" id="deep" /> Deep extraction (AKN + first PDF text)</label>
+    <span class="pill">Deep extraction (AKN + first PDF text) is always on</span>
   </div>
   <pre id="scrapeResult"></pre>
 
@@ -135,6 +135,14 @@
     const data = await res.json();
     document.getElementById('scrapeResult').textContent = JSON.stringify(data, null, 2);
     await viewCase(id);
+  }
+
+  async function chatCase(id){
+    const q = document.getElementById('chatq').value.trim();
+    if(!q) return;
+    const res = await fetch(`/ai/chat/${id}?model=gpt-4o-mini`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ q })});
+    const data = await res.json();
+    document.getElementById('scrapeResult').textContent = JSON.stringify(data, null, 2);
   }
 </script>
 </body>

@@ -12,11 +12,14 @@ from .akn import extract_plain_text_from_akn
 from pypdf import PdfReader
 from sqlalchemy.exc import IntegrityError, OperationalError
 from tenacity import retry, stop_after_attempt, wait_exponential_jitter
+import threading
 
 
 def normalize_url(base: str, href: str) -> str:
 	return urljoin(base, href)
 
+
+_transaction_lock = threading.RLock()
 
 @retry(stop=stop_after_attempt(3), wait=wait_exponential_jitter(initial=0.5, max=2))
 def scrape_case_detail(url: str, deep: bool = False) -> int:
@@ -25,23 +28,26 @@ def scrape_case_detail(url: str, deep: bool = False) -> int:
 	parsed = parse_case_detail(resp.url, resp.text)
 
 	init_db()
-	with get_session() as session:
+	# Serialize the entire DB transaction to avoid SQLite write contention
+	with _transaction_lock, get_session() as session:
 		existing = session.query(Case).filter(Case.url == parsed.url).one_or_none()
 		if existing:
 			case = existing
 		else:
 			case = Case(url=parsed.url)
 			session.add(case)
-			try:
-				session.flush()
-			except IntegrityError:
-				# Another concurrent request inserted the same URL; fetch it
-				session.rollback()
-				case = session.query(Case).filter(Case.url == parsed.url).one()
-			except OperationalError:
-				# SQLite locked, let retry handle
-				session.rollback()
-				raise
+			from .db import db_write_lock
+			with db_write_lock:
+				try:
+					session.flush()
+				except IntegrityError:
+					# Another concurrent request inserted the same URL; fetch it
+					session.rollback()
+					case = session.query(Case).filter(Case.url == parsed.url).one()
+				except OperationalError:
+					# SQLite locked, let retry handle
+					session.rollback()
+					raise
 
 		case.title = parsed.title
 		case.case_number = parsed.case_number
@@ -55,6 +61,7 @@ def scrape_case_detail(url: str, deep: bool = False) -> int:
 		with db_write_lock:
 			try:
 				session.flush()
+				session.commit()
 			except OperationalError:
 				session.rollback()
 				raise
@@ -90,6 +97,7 @@ def scrape_case_detail(url: str, deep: bool = False) -> int:
 					from .db import db_write_lock
 					with db_write_lock:
 						session.flush()
+						session.commit()
 		except Exception:
 			pass
 
@@ -102,6 +110,10 @@ def scrape_case_detail(url: str, deep: bool = False) -> int:
 				path = save_pdf(abs_url, pdf_resp.content, pdf_resp.content_type)
 				doc = Document(case_id=case.id, file_path=str(path), url=abs_url, content_type=pdf_resp.content_type)
 				session.add(doc)
+				from .db import db_write_lock
+				with db_write_lock:
+					session.flush()
+					session.commit()
 				if first_pdf_text is None and deep:
 					try:
 						reader = PdfReader(str(path))
@@ -122,6 +134,10 @@ def scrape_case_detail(url: str, deep: bool = False) -> int:
 				path = save_image(abs_url, img_resp.content, img_resp.content_type)
 				img = Image(case_id=case.id, file_path=str(path), url=abs_url)
 				session.add(img)
+				from .db import db_write_lock
+				with db_write_lock:
+					session.flush()
+					session.commit()
 			except Exception:
 				continue
 
@@ -131,6 +147,7 @@ def scrape_case_detail(url: str, deep: bool = False) -> int:
 			from .db import db_write_lock
 			with db_write_lock:
 				session.flush()
+				session.commit()
 
 		return case.id
 

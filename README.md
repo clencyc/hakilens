@@ -82,10 +82,13 @@ Open auto-docs: `http://localhost:8000/docs`
 Endpoints:
 - POST `/scrape/url?url=...`
   - Scrapes a case detail page or listing (auto-detects), returns saved case IDs.
+  - Deep extraction (AKN + first PDF text) is enabled by default.
 - POST `/scrape/listing?url=...&max_pages=5`
   - Crawls a listing with pagination, returns saved case IDs.
+  - Deep extraction is enabled by default.
 - POST `/scrape/case?url=...`
   - Scrapes a single case detail URL only.
+  - Deep extraction is enabled by default.
 - GET `/cases?q=...&limit=50&offset=0`
   - Lists cases with optional search.
 - GET `/cases/{case_id}`
@@ -104,8 +107,11 @@ AI Endpoints:
 - POST `/ai/ask`
   - Body: `{ "q": "your legal question" }`
   - Naive keyword retrieval over `title` and `content_text`, then LLM answers using only retrieved context. Returns `answer` and `used_cases`.
+ - POST `/ai/chat/{case_id}`
+   - Body: `{ "q": "question about this case" }`
+   - Chats using only the specified case’s stored content (metadata + text). Uses your Azure/OpenAI configuration. Returns `{ "answer": "..." }`.
 
 ## Sample HTML
-A simple tester is provided at `static/index.html` and served at `/` by the API. Use it to trigger scraping and browse stored cases.
+A simple tester is provided at `static/index.html` and served at `/` by the API. Deep extraction is always on in the UI. In the case detail panel there’s a chat box that calls `/ai/chat/{case_id}`.
 
 
