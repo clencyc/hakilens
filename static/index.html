@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hakilens Scraper Test</title>
+  <style>
+    :root { --bg: #0f172a; --panel:#111827; --accent:#10b981; --text:#e5e7eb; --muted:#9ca3af; }
+    body { background: linear-gradient(180deg,#0b1023,#0f172a); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; }
+    header { padding: 16px 24px; background: #0b1023; border-bottom: 1px solid #1f2937; display:flex; align-items:center; gap:12px }
+    header .title { font-weight: 700; letter-spacing:.3px }
+    main { max-width: 980px; margin: 20px auto; padding: 0 20px; }
+    input, button { padding: 10px 12px; font-size: 14px; border-radius: 8px; border: 1px solid #1f2937; background:#0b1023; color: var(--text); }
+    input::placeholder { color: #6b7280 }
+    button { background: var(--accent); color:#06241b; border: none; font-weight: 600; cursor: pointer; }
+    button.secondary { background:#1f2937; color:#e5e7eb }
+    .row { margin: 10px 0; display:flex; gap:8px; flex-wrap:wrap }
+    .grid { display:grid; grid-template-columns: 1fr; gap:12px }
+    @media (min-width:800px){ .grid{ grid-template-columns: 1fr 1fr } }
+    .card { background: var(--panel); border: 1px solid #1f2937; padding: 14px; border-radius: 12px; }
+    .badge { display:inline-block; padding:2px 8px; border-radius:999px; background:#1f2937; color:#93c5fd; font-size:12px }
+    code { background: #0b1023; padding: 2px 6px; border-radius: 4px; }
+    .muted { color: var(--muted); font-size: 12px; }
+    .pill { padding:4px 8px; border-radius:999px; background:#052e2b; color:#34d399; border:1px solid #0e3b35; font-size:12px }
+  </style>
+  <script>
+    async function scrapeUrl() {
+      const url = document.getElementById('scrapeInput').value.trim();
+      if (!url) return;
+      const deep = document.getElementById('deep').checked ? '&deep=true' : '';
+      const res = await fetch(`/scrape/url?url=${encodeURIComponent(url)}${deep}`, { method: 'POST' });
+      const data = await res.json();
+      document.getElementById('scrapeResult').textContent = JSON.stringify(data, null, 2);
+      await loadCases();
+    }
+
+    async function scrapeQuery() {
+      const q = document.getElementById('queryInput').value.trim();
+      if (!q) return;
+      const deep = document.getElementById('deep').checked ? '&deep=true' : '';
+      const res = await fetch(`/scrape/search?q=${encodeURIComponent(q)}${deep}`, { method: 'POST' });
+      const data = await res.json();
+      document.getElementById('scrapeResult').textContent = JSON.stringify(data, null, 2);
+      await loadCases();
+    }
+
+    async function loadCases() {
+      const q = document.getElementById('searchInput').value.trim();
+      const res = await fetch(`/cases${q ? `?q=${encodeURIComponent(q)}` : ''}`);
+      const data = await res.json();
+      const container = document.getElementById('cases');
+      container.innerHTML = '';
+      for (const item of data.items) {
+        const div = document.createElement('div');
+        div.className = 'card';
+        div.innerHTML = `
+          <div><strong>${item.title || '(no title)'} </strong></div>
+          <div class="muted">#${item.id} • ${item.case_number || ''} • ${item.court || ''} • ${item.date || ''}</div>
+          <div><a href="#" onclick="viewCase(${item.id}); return false;">View</a></div>
+        `;
+        container.appendChild(div);
+      }
+    }
+
+    async function viewCase(id) {
+      const res = await fetch(`/cases/${id}`);
+      const data = await res.json();
+      const docsRes = await fetch(`/cases/${id}/documents`);
+      const docs = await docsRes.json();
+      const imgsRes = await fetch(`/cases/${id}/images`);
+      const imgs = await imgsRes.json();
+      const container = document.getElementById('detail');
+      container.innerHTML = `
+        <div class="card">
+          <div><strong>${data.title || '(no title)'} </strong></div>
+          <div class="muted">${data.case_number || ''} | ${data.court || ''} | ${data.date || ''} | ${data.citation || ''}</div>
+          ${data.summary ? `<div class="badge">Summary</div><pre style="white-space:pre-wrap">${data.summary}</pre>` : ''}
+          <div class="row">
+            <button onclick="summarize(${id})">Summarize</button>
+          </div>
+          <pre style="white-space:pre-wrap">${(data.content_text || '').slice(0, 4000)}</pre>
+          <div>Documents:</div>
+          <ul>${docs.items.map(d => `<li><code>${d.content_type || ''}</code> ${d.file_path}</li>`).join('')}</ul>
+          <div>Images:</div>
+          <ul>${imgs.items.map(i => `<li>${i.file_path}</li>`).join('')}</ul>
+        </div>
+      `;
+    }
+
+    window.addEventListener('load', loadCases);
+  </script>
+</head>
+<body>
+  <header>
+    <div class="title">Hakilens • Kenya Law Scraper + AI</div>
+    <span class="pill">beta</span>
+  </header>
+  <main>
+  <h2>Scrape and Search</h2>
+
+  <div class="row">
+    <input id="scrapeInput" size="60" placeholder="Paste a Kenya Law URL, e.g. https://new.kenyalaw.org/judgments/" />
+    <button onclick="scrapeUrl()">Scrape</button>
+  </div>
+  <div class="row">
+    <input id="queryInput" size="60" placeholder="Enter case number or keywords, e.g. Complaint (NRB) 485 of 2017" />
+    <button onclick="scrapeQuery()">Search & Scrape</button>
+  </div>
+  <div class="row">
+    <label><input type="checkbox" id="deep" /> Deep extraction (AKN + first PDF text)</label>
+  </div>
+  <pre id="scrapeResult"></pre>
+
+  <div class="row">
+    <input id="searchInput" size="30" placeholder="Search cases..." />
+    <button onclick="loadCases()">Search</button>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Cases</h3>
+      <div id="cases"></div>
+    </div>
+    <div class="card">
+      <h3>Details</h3>
+      <div id="detail"></div>
+    </div>
+  </div>
+
+  <p class="muted">Tip: use the scrape form above to trigger on-demand fetches; a weekly cron can call the /scrape/listing endpoint.</p>
+  </main>
+<script>
+  async function summarize(id){
+    const res = await fetch(`/ai/summarize/${id}`, { method:'POST' });
+    const data = await res.json();
+    document.getElementById('scrapeResult').textContent = JSON.stringify(data, null, 2);
+    await viewCase(id);
+  }
+</script>
+</body>
+</html>

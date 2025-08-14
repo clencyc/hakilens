@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      
+  Log In
+
+    - Kenya Law</title>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+      <link rel="alternate"
+            type="application/atom+xml"
+            title="Atom RSS Feed"
+            href="/feeds/all.xml"/>
+      
+      
+      
+      
+      
+        <link rel="icon" type="image/ico" href="/static/images/favicon.efc8eb543aac.ico" />
+        <link rel="icon"
+              type="image/png"
+              href="/static/images/favicon-16x16.e0c157a002bc.png"/>
+        <link rel="icon"
+              type="image/png"
+              href="/static/images/favicon-32x32.276d6951efca.png"/>
+        <link rel="icon"
+              type="image/png"
+              href="/static/images/favicon-96x96.ceac3fa0fc72.png"/>
+        <link rel="icon"
+              type="image/png"
+              href="/static/images/favicon-180x180.82f372624b1a.png"/>
+      
+    
+    
+  <link rel="stylesheet"
+        href="/static/stylesheets/kenyalaw.9cd24ed80b98.css"
+        type="text/css"/>
+
+    
+  <script id="peachjam-config" type="application/json">{"appName": "Kenya Law", "pdfWorker": "/static/js/pdf.worker-prod.993cc59d4572.js", "userHelpLink": "https://help.kenyalaw.org/", "sentry": {"dsn": "https://3966caf840335babd429d13f2fc58e75@o389880.ingest.us.sentry.io/4509053613768704", "environment": "prod"}}</script>
+  
+    <!-- sentry -->
+    <script src="https://browser.sentry-cdn.com/8.19.0/bundle.min.js"
+            integrity="sha384-GMXJOdPusU6buvY19uetB8sepCeSxAnhMOOvoTJ8NVDumzfGeBFgRFuRD6rsz8Np"
+            crossorigin="anonymous"
+            defer></script>
+    
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async
+              src="https://www.googletagmanager.com/gtag/js?id=G-QJFSP223QQ"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        // set up default config
+        gtag('js', new Date());
+        gtag('set', {'lii_user_language': 'en'});
+
+        // split multiple ids into array
+        const google_analytics_ids = 'G-QJFSP223QQ'.trim().split(/\s+/);
+        // loop through ids and add config for each
+        google_analytics_ids.forEach(id => {
+          gtag('config', id);
+        });
+      </script>
+    
+    
+  
+  <!-- must be last script to load -->
+  <script defer src="/static/js/app-prod.16f72edd59e4.js"></script>
+
+  </head>
+  <body class=" kenyalaw">
+    
+    
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 col-lg-6 mx-auto">
+        
+  
+
+  <div class="card allauth-box">
+    <div class="m-4">
+      
+  <div class="mb-4 card-header border-bottom bg-white">
+    <h1>Log in</h1>
+    <p class="text-muted">
+      Don't have an account? <a href="/accounts/signup/">Sign up here.</a>
+    </p>
+  </div>
+  <div class="card-body">
+    <form method="post" action="/accounts/login/" id="email-login">
+      <input type="hidden" name="csrfmiddlewaretoken" value="TZqOzM0xEq1d8iNl3RjSbuSi6AiQEfIiDSqxeugnSEJf4dJoDLgQfr0dTCXcMqys">
+      
+        <input type="hidden"
+               name="next"
+               value="/judgments/?q=Complaint%20(NRB)%20485%20of%202017"/>
+      
+      
+      <div class="mb-3">
+        <label class="form-label" for="id_login">Email</label>
+        <input type="text"
+               class="form-control"
+               name="login"
+               id="id_login"
+               required
+               autofocus
+               placeholder="you@example.com"/>
+        
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="id_password">Password</label>
+        <input type="password"
+               class="form-control"
+               name="password"
+               id="id_password"
+               required/>
+        
+      </div>
+      <div class="mb-4">
+        <script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+    // Submit function to be called, after reCAPTCHA was successful.
+    var onSubmit_736bd33c6ccd4e03a37e53613f251267 = function(token) {
+        console.log("reCAPTCHA validated for 'data-widget-uuid=\"736bd33c6ccd4e03a37e53613f251267\"'. Submitting form...")
+        document.querySelector('.g-recaptcha[data-widget-uuid="736bd33c6ccd4e03a37e53613f251267"]').closest('form').submit();
+    };
+
+    // Helper function to prevent form submission and execute verification.
+    var verifyCaptcha_736bd33c6ccd4e03a37e53613f251267 = function(e) {
+        e.preventDefault();
+        grecaptcha.execute();
+    };
+
+    // Bind the helper function to the form submit action.
+    document.addEventListener( 'DOMContentLoaded', function () {
+        var element = document.querySelector('.g-recaptcha[data-widget-uuid="736bd33c6ccd4e03a37e53613f251267"]');
+        element.closest('form').addEventListener('submit', verifyCaptcha_736bd33c6ccd4e03a37e53613f251267);
+    });
+</script>
+
+<div
+     class="g-recaptcha" data-sitekey="6LejdfMqAAAAABsgsBunaIU2h0SnibBr0oF22kXA" id="id_captcha" data-widget-uuid="736bd33c6ccd4e03a37e53613f251267" data-callback="onSubmit_736bd33c6ccd4e03a37e53613f251267" data-size="invisible"
+>
+</div>
+        
+      </div>
+      <div class="mb-4">
+        <button class="btn btn-primary px-4" type="submit">Log in</button>
+      </div>
+      <div class="mb-3">
+        <p class="mb-1">
+          <a href="/accounts/password/reset/">Forgot your password?</a>
+        </p>
+      </div>
+    </form>
+    
+
+
+  <hr/>
+  
+    <form method="post"
+          class="mt-4"
+          action="/accounts/google/login/?process=login&amp;next=%2Fjudgments%2F%3Fq%3DComplaint%2520%28NRB%29%2520485%2520of%25202017">
+      <input type="hidden" name="csrfmiddlewaretoken" value="TZqOzM0xEq1d8iNl3RjSbuSi6AiQEfIiDSqxeugnSEJf4dJoDLgQfr0dTCXcMqys">
+      <button class="btn btn-block btn-outline-primary mb-3 socialaccount_provider google"
+              type="submit">
+        
+          <img alt="google-logo"
+               src="/static/images/google-logo.27c40c5cb4e9.png"
+               style="height: 16px;
+                      margin-right: 5px"/>
+        
+        Log in with Google
+      </button>
+    </form>
+  
+
+
+  </div>
+
+    </div>
+    
+  </div>
+
+      </div>
+    </div>
+  </div>
+
+    
+  </body>
+</html>

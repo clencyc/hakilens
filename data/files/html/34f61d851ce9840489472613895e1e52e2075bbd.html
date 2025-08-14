@@ -1,0 +1,1737 @@
+<!--New code for home.html--->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Kenya Law Cases Database</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+<!-- Google Analytics Test -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68037687-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+    <!-- Le styles -->
+	 <link href="https://kenyalaw.org/caselaw/addons/themes/default/css/bootstrap.css" type="text/css" rel="stylesheet" />
+	 <link href="https://kenyalaw.org/caselaw/addons/themes/default/css/bootstrap-responsive.css" type="text/css" rel="stylesheet" />
+	 <link href="https://kenyalaw.org/caselaw/addons/themes/default/css/jquery.jscrollpane.css" type="text/css" rel="stylesheet" />
+	 <link href="https://kenyalaw.org/caselaw/addons/themes/default/css/style.css" type="text/css" rel="stylesheet" />
+
+	<!---google fonts---------
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>-->
+	
+	<!----Menu css-------------->
+    <link href="https://kenyalaw.org/caselaw/addons/themes/default/css/css3menu.css" type="text/css" rel="stylesheet" />
+	
+	<!---Expanding search bar CSS and JS-------->
+	<link href="https://kenyalaw.org/caselaw/addons/themes/default/css/component.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/modernizr.custom.js"></script>
+	
+	
+	<!--Added JS/CSS files from prev layout-->
+     <link href="https://kenyalaw.org/caselaw/addons/themes/default/css/kenya_law/jquery-ui.css" type="text/css" rel="stylesheet" />
+     <link rel="stylesheet" href="" rel="stylesheet" type="text/css" />
+     
+	  
+	  	  <link href="https://kenyalaw.org/caselaw/addons/themes/default/css/chosen.css" type="text/css" rel="stylesheet" />
+	
+    <style>
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+      color: #5a5a5a;
+    }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar 
+    {
+
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE CAROUSEL
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 500px;
+    }
+    /*.carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }*/
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+    </style>
+
+         	<!-- IE Fix for HTML5 Tags -->
+	<!--[if lt IE 9]>
+	       <script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/html5shiv.js"></script>
+	<![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+	<link href="https://kenyalaw.org/caselaw/addons/themes/default/img/favicon.png" rel="shortcut icon" type="image/x-icon" />
+     
+<!--<link rel="stylesheet" type="text/css" href="https://kenyalaw.org/caselaw/addons/themes/default/css_tausi/akn.css" />-->
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/laws-africa/tausi-web@1.0.1/dist/css/tausi-web.min.css" />
+
+   
+  </head>
+
+  <body>
+       <!--[if lte IE 9]><script src="http://197.211.23.99/casesfinal/addons/themes/default/js/ie6/warning.js"></script><script>window.onload=function(){e("http://197.211.23.99/casesfinal/addons/themes/default/js/ie6/")}</script><![endif]-->
+   
+  <div class="container">	 
+	  <div class="row">
+	 
+	       <div class="span4">
+		       <div class="logo">
+		          <a href="index.php"><img src="https://kenyalaw.org/caselaw/addons/themes/default/img/logo.png" alt="logo" /></a>
+			   </div>
+		   </div>
+		   
+		    <div class="span8"> 
+			
+ 		         		  <div id="top-right">
+						  
+                                <div class="row-fluid">
+								
+								<div style="float:left; width:90%;">
+		                         <ul class="top-right-menu">
+								   <li><a href="https://www.kenyalaw.org/kl/index.php?id=115">About us</a></li>
+								    <li><a href="https://www.kenyalaw.org/kl/index.php?id=157">Judicial profiles</a></li>
+								    <li><a href="https://www.kenyalaw.org/p_catalog/">Product catalogue</a></li>
+								    <li><a href="https://www.kenyalaw.org/kl/index.php?id=133">Careers</a></li>
+								   	<li><a href="https://www.kenyalaw.org/kl/index.php?id=3158">Contact us</a></li> 
+								    <li><a href="https://www.kenyalaw.org/kl/index.php?id=2159">Sitemap</a></li>
+							     </ul>
+								 </div>
+								 
+								 <div style="float:right; width:10%;">
+								  <div id="enlarge_text" class="" >
+									<a href="javascript:decreaseFontSize();"><img src="https://kenyalaw.org/caselaw/addons/themes/default/img/font-dec.png" alt="font-dec" /></a> 
+									<a href="javascript:increaseFontSize();"><img src="https://kenyalaw.org/caselaw/addons/themes/default/img/font-inc.png" alt="font-inc" /></a>
+								 </div>
+								 </div>
+							 
+							 </div>
+			         		
+		                </div>  
+		
+			         <div id="top-right-bottom">
+						  <!--search-->
+							<div  id="sb-search" class="sb-search">
+								<form action="https://www.kenyalaw.org/klr/index.php?id=14&amp;L=0" method="post" name="searchform" style="float:right; width:200px;">
+									<input class="sb-search-input" placeholder="Search..." type="text" value="" name="tx_indexedsearch[sword]" id="search">
+									<input class="sb-search-submit" type="submit" name="tx_indexedsearch[submit_button]" value="">
+									<input type="hidden" name="tx_indexedsearch[_sections]" value="0">
+									<input type="hidden" name="tx_indexedsearch[pointer]" value="0">
+									<input type="hidden" name="tx_indexedsearch[ext]" value="0">
+									<input type="hidden" name="tx_indexedsearch[lang]" value="0">
+									<span class="sb-icon-search"></span>
+								</form>
+							</div>
+							
+						<!--End search-->	
+		
+				  </div>
+				<!--End search-->
+		
+		    </div>
+		   
+		  
+	      </div>
+	</div>
+
+
+   <!--navigation-->
+   	 <div id="main-menu">
+    <div class="container">
+	    <div class="row">
+		  <div class="span12">  
+                            <div id="menu1" class="menu_container black full_width">
+	<!-- Mobile menu collapser -->
+		<div class="mobile_collapser">
+            <label for="hidden_menu_collapser">
+                <span class="mobile_menu_icon"></span> Menu
+            </label>
+        </div>
+        <input id="hidden_menu_collapser" type="checkbox" />
+	<!-- /Mobile menu collapser -->
+            <ul>
+            <li> <a href="https://www.kenyalaw.org/">Home</a></li>
+            <li>
+                <a href="https://new.kenyalaw.org/legislation/">Laws of Kenya</a>
+                <div class="menu_dropdown_block">
+                    <ul class="menu_submenu_block">
+                        <!-- <li><a href="https://kenyalaw.org/kl/index.php?id=398">The Constitution Of Kenya</a></li>-->
+                                            <li><a href="https://new.kenyalaw.org/legislation/">Laws of Kenya Database</a></li>
+                                            <li><a href="https://kenyalaw.org/kl/index.php?id=3409">Table Of Contents Of The Laws Of Kenya</a></li>
+											<li><a href="https://kenyalaw.org/kl/index.php?id=12031">Twenty-Fourth Annual Supplement</a></li> 
+											<li><a href="https://kenyalaw.org/kl/index.php?id=11741">Recent Legislation</a></li>			
+                                            <li><a href="https://kenyalaw.org/kl/index.php?id=11742">Legal Notices</a></li>                   
+                                            <li><a href="https://kenyalaw.org/kl/index.php?id=11753">Bills</a></li>
+											<li><a href="https://kenyalaw.org/kl/index.php?id=2142">Treaties Database</a></li>
+											<li><a href="https://kenyalaw.org/kl/index.php?id=5571">Repealed Statutes</a></li>
+											<li><a href="https://kenyalaw.org/kl/index.php?id=4206">EAC Legislation</a></li> 
+											<li><a href="https://kenyalaw.org/kl/index.php?id=11764">County Legislative Information</a></li>
+											<li><a href="https://kenyalaw.org/kl/index.php?id=3979">Laws Of Devolution</a></li>
+											<li><a href="https://kenyalaw.org/kl/index.php?id=11536">Practice Notes</a></li>
+                                            <!-- <li><a href="https://www.kenyalaw.org/kl/index.php?id=516">Amendment Acts</a></li>  --> 
+                                            <li><a href="https://www.kenyalaw.org/kl/index.php?id=844">FAQ's</a></li>
+                    </ul>
+                </div>
+            </li>
+			            <li> <a href="https://new.kenyalaw.org/judgments/">Case Search</a>
+                                       <div class="menu_dropdown_block">
+                    <ul class="menu_submenu_block">
+                                                <li>
+                           <a href="https://kenyalaw.org/caselaw/cases/advanced_search_courts?courtId=23">Supreme Court of Kenya</a></li>           
+
+                        <li>
+                            <a href="https://kenyalaw.org/caselaw/cases/advanced_search_courts?court=189999">All Courts of Appeal</a></li>
+                        <li><a href="https://kenyalaw.org/caselaw/cases/advanced_search_courts?court=190000">All High Courts</a></li>
+                        <li><a href="https://kenyalaw.org/caselaw/cases/advanced_search_courts?court=190001">All Employment and Labour Relations Courts</a></li>
+                        <li><a href="https://kenyalaw.org/caselaw/cases/advanced_search_courts?court=190002">All Environmental & Land Courts</a></li>                   
+                    </ul>
+                    
+                </div> 
+            
+            </li>
+                                    
+						            <li> <a href="https://new.kenyalaw.org/judgments/court-class/tribunals/">Tribunals</a></li>
+			<li> <a href="https://www.kenyalaw.org/kl/index.php?id=852"> Parliament</a>  
+			     <div class="menu_dropdown_block">
+                    <ul class="menu_submenu_block">
+                        <li><a href="https://www.kenyalaw.org/kl/index.php?id=852">Search Handsard Archive</a></li>
+                        <li><a href="https://www.kenyalaw.org/kl/index.php?id=850">Press Release</a></li>
+                        <li><a href="https://www.kenyalaw.org/kl/index.php?id=11753">Bills</a></li>
+                    </ul>
+                </div>
+			</li>
+		    <li> <a href="https://new.kenyalaw.org/causelists/"> Cause List</a>
+			     <!--  <div class="menu_dropdown_block">
+                    <ul class="menu_submenu_block">
+                        <li><a href="https://www.kenyalaw.org/kl/index.php?id=4111">Supreme Court</a></li>
+                        <li><a href="https://www.kenyalaw.org/kl/index.php?id=1606">Court of Appeal</a></li>
+                        <li><a href="https://www.kenyalaw.org/kl/index.php?id=2037">High Court of Kenya</a></li>
+                        <li><a href="https://www.kenyalaw.org/kl/index.php?id=4155">Employment and Labour Relations Court</a></li>
+                        <li><a href="https://www.kenyalaw.org/kl/index.php?id=6891">Environment and Land Court</a></li>
+						<li><a href="https://www.kenyalaw.org/kl/index.php?id=1648">Chief Magistrates Court</a></li>
+						<li><a href="https://www.kenyalaw.org/kl/index.php?id=5340">Kadhis' Court</a></li>
+                        <li><a href="https://www.kenyalaw.org/kl/index.php?id=1568">Licensed Process Servers</a></li>
+                    </ul>
+                </div> -->
+			</li>
+			
+			<li> <a href="https://new.kenyalaw.org/gazettes"> Kenya Gazette</a> 
+			       <!-- <div class="menu_dropdown_block">
+                    <ul class="menu_submenu_block">
+                        <li><a href="https://kenyalaw.org/kl/index.php?id=4105">Kenya Gazette Online Archive</a></li>
+                        <li><a href="https://kenyalaw.org/kl/index.php?id=4159">Kenya Gazette Selected Notices</a></li>
+                    </ul>
+                </div> -->
+			</li>
+			
+			
+			<li> <a href="#"> Publications </a> 
+			       <div class="menu_dropdown_block">
+                    <ul class="menu_submenu_block">
+
+                        <li><a href="https://www.kenyalaw.org/kl/index.php?id=1879">Bench Bulletin</a></li>
+                        <li><a href="https://www.kenyalaw.org/kl/index.php?id=3329">Annual Reports</a></li>
+                        <li><a href="https://www.kenyalaw.org/kl/index.php?id=1886">Kenya Law Journal</a></li>
+                        <li><a href="https://kenyalaw.org/kl/index.php?id=4158">Law Related Articles</a></li>
+                        <li><a href="https://kenyalaw.org/kl/index.php?id=4140">Newsletter Archives </a></li>
+                        <li><a href="https://kenyalaw.org/kl/index.php?id=1884">Newsletter Subscription </a></li>
+                    </ul>
+                </div>
+			</li>
+			
+			
+			 <li>
+                <a href="#">Community</a>
+                <div class="menu_dropdown_block">
+                    <ul class="menu_submenu_block">
+                        <li><a href="https://kenyalaw.org/kenyalawblog">Blog</a></li>
+                        <!-- <li><a href="http://kenyalaw.org/kenyalaw-forum">Forum</a></li> -->
+                    </ul>
+                </div>
+            </li>
+             <li><a href="https://www.kenyalaw.org/kl/index.php?id=3479">Election Petitions</a>
+            </li>
+        </ul>
+    </div><!-- /menu -->     
+	     </div>
+		  </div>
+		</div>
+	</div>
+
+     <div id="header-banner">
+		 <div class="container">
+			 <div class="row">
+				  <div class="span8">
+				    <div id="header-title">
+					 <h2> <!--Kenya Law Cases Database --> Case Search  </h2>
+					</div>
+				  </div>
+				  
+				  <div class="span4">
+				      <div class="pagetitle-image">
+					    <img src="https://kenyalaw.org/caselaw/addons/themes/default/img/pillars.png" alt="pillars" />
+					  </div>
+				  </div>
+				  
+			 </div>
+		 </div>
+    </div>
+	
+	
+	<div id="breadcrumbs-section">
+	      <div class="container">
+		     <div class="row">
+			    <div class="span12">
+				     <ul class="breadcrumb">
+					 <strong>You are here:</strong>&nbsp; &nbsp; &nbsp;
+					  <li><a href="#">Home</a> <span class="divider">/</span></li>
+					  <li class="active">Case Search</li>
+					</ul>
+				</div>
+			 </div>
+		  </div>
+	</div> 
+	  </div>
+	  
+	  <!--Content section-->
+	  
+	  <div id="body-section">
+	        <div class="container">
+		     <div class="row">
+			     
+				  <div class="span3">
+					 <!--New accordion -->
+					  <div class="left-hand-side">
+                        <div class="accordion case-search-left" id="accordion2">
+                            <ul style="width:100%; margin:0px 0px 5px 0px;">
+                                <li class="nav-header">Help</li>
+                            </ul>
+
+                            <div class="accordion-group">
+                                <div class="accordion-heading case-heading">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                                        Advanced search Help
+                                    </a>
+                                </div>
+                                <div id="collapseThree" class="accordion-body collapse in">
+                                    <div class="accordion-inner">
+
+                                        <!--Case actions content -->
+                                        <ul class="nav nav-list case-search-li">
+
+                                            <li>Advanced Search mode is suitable for finding a particular case when you have details that describe the case at hand e.g. (names of parties, case number, case year etc).</li>
+                                            <li>To find a case according to its meta data (names of parties, case number, and date of delivery, case year etc) one need not fill in all the fields. You may use any one or more search criteria; search using whatever information you have..</li>
+
+                                        </ul>
+                                        <!--End case actions content -->
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>	
+					 <!-- End new accordion -->
+				
+					 <!--End span3 left sidebar-->
+				  </div>
+				  
+				  <div class="span9">
+				      <div id="inside-3">
+				   <!--Main content body-->
+				     
+<!--New tab content -->
+
+<div class="page-content">
+
+    <div id="data_form">
+        <!---Tabs for search---->
+        <ul id="myTab" class="nav nav-tabs tabs-law">
+
+            <li class="active"><a href="#boolean-search" data-toggle="tab"> Google Custom Search</a></li>
+            <!--<li><a href="#general-search" data-toggle="tab">General search</a></li>-->
+            <li class=""><a href="#specific-search" data-toggle="tab">Advanced Search</a></li>
+            <li><a href="#case-help" data-toggle="tab">Help</a></li>
+        </ul>
+
+        <div id="myTabContent" class="tab-content mine-content">
+
+            <div id="searching" style="width:100%;display: none;">
+                <div style="color:#900">
+                    <p style="padding:px"><img src="https://kenyalaw.org/caselaw/assets/action.gif" style="align:left" /> Please Wait. Searching ...</p>
+                </div>
+            </div>
+
+            <!--General search-->
+            <div class="tab-pane fade " id="general-search">
+                <!--Search box-->
+                <form action="https://kenyalaw.org/caselaw/cases/search/" id="gen_search", class="form-inline", style="margin-left:0px;" method="post" accept-charset="utf-8">                <input type="text" name="q" placeholder="Search..." class="search_inp input-medium search-query case-search-input" value="" id="big_search" />
+                <input type="submit" class="search_bt case-search-button" name="Submit" value="Search" />
+				
+
+                </form>
+
+            </div>
+            <!--End general search -->
+
+            <!--Advanced search-->
+            <div class="tab-pane fade" id="specific-search">
+                <div class="well">
+                    <h4> Please enter advanced search options </h4>
+
+                    <hr />
+                    <p/>
+                    <!--Search box-->
+                    <form action="https://kenyalaw.org/caselaw/cases/advanced_search/" id="adv_search" method="post" accept-charset="utf-8">                    <table id="search-table" border="0" class="my-adv-search" >
+                        <tbody>
+                            <tr>
+                                <td class="label-holder">Case Content:</td>
+                                <td class="field"><input class="inp" value="" name="content" id="" title="Enter words in the case" type="text"></td>
+                                <td class="label-holder">Subject:</td>
+                                <td class="field"><input class="inp" value="" name="subject" id="" title="Subject" type="text"></td>
+                            </tr>
+
+                            <tr>
+                                <!--<td class="label-holder" >Exact Phrase in Content:</td>-->
+                                <!--<td class="field"><input class="inp" value="" name="content_phrase" id="" title="Enter exact phrase in the case" type="text"></td>-->
+                                <td class="label-holder">Case Number:</td>
+                                <td class="field"><input class="inp" name="case_number" id="case_number" title="Case Number" type="text" value=""></td>
+                             <td class="label-holder">Parties:</td>
+                                <td class="field"><input class="inp" value="" name="parties" id="parties" title="Parties" type="text"></td>
+                            
+                            </tr>
+
+
+                            <tr>
+                              
+                                <!--<td class="label-holder">Case Type:</td>-->
+<!--                                <td class="field">
+                                    <select name="case_type" id="case_type" class="inp" value="" >
+                                        <option value="" selected="">All</option>
+                                        <option  value="1">Civil</option>
+                                        <option  value="2">Criminal</option>
+                                    </select>
+                                </td>-->
+                            </tr>
+
+
+<!--                            <tr>
+                                <td class="label-holder">Citation:</td>
+                                <td class="field"><input class="inp" name="citation" id="citation" type="text" value=""></td>
+                                <td class="label-holder">Advocates:</td>
+                                <td class="field"><input class="inp" name="advocates" id="advocates" title="Advocate(s)" type="text" value=""></td>
+
+                            </tr>-->
+                            <tr>
+                                <td class="label-holder">Judge: </td>
+                                <td class="grey-input field">
+<select name="judges[]"  id="judge" style="width:100%" data-placeholder="Choose a Judge..." class="chzn-select inp" multiple="multiple">
+<option value="406">A Gikuya</option>
+<option value="110">Aaron Gitonga Ringera</option>
+<option value="104">Abdallah</option>
+<option value="366">Abdi Osman Sheikh</option>
+<option value="365">Abdiaziz Maalim Mohamed</option>
+<option value="19">Abdul Majid Cockar</option>
+<option value="126">Abdul Rauf Samnakay</option>
+<option value="401">Abdulhalim Hussein Athman</option>
+<option value="14">Abdulla Mustafa</option>
+<option value="416">Abdullahi M. Diriye</option>
+<option value="10">Abdulrasul Ahmed Lakha</option>
+<option value="154">Abida Ali-Aroni</option>
+<option value="183">Abigail Mshila</option>
+<option value="402">Abraham Kibet Kiprotich</option>
+<option value="403">Adan Mohammed</option>
+<option value="346">Addraya  Edda Dena</option>
+<option value="404">Adelaide M Mbithi</option>
+<option value="405">Adrian Kamotho</option>
+<option value="157">Aggrey Otsyula Muchelule</option>
+<option value="236">Agnes Kalekye Murgor</option>
+<option value="341">Agnes Kitiku Nzei</option>
+<option value="5">Akilano Molade Akiwumi</option>
+<option value="51">Alan Robin Winston Hancox</option>
+<option value="380">Aleem Alnashir Visram</option>
+<option value="67">Alex George Aluri Etyang</option>
+<option value="61">Alfred Henry Simpson</option>
+<option value="181">Alfred Mabeya</option>
+<option value="407">Alice Owuor</option>
+<option value="52">Alister Arthur Kneller</option>
+<option value="28">Alnashir Ramazanali Magan Visram</option>
+<option value="1">Amraphael Mbogholi-Msagha</option>
+<option value="6">Amrittal Bhagwanji Shah</option>
+<option value="38">Andrew Isaac Hayanga</option>
+<option value="337">Anna Ngibuini Mwaure</option>
+<option value="229">Anne Abongo Omollo</option>
+<option value="292">Anne Colleta Apondi Ongâinjo</option>
+<option value="350">Anne Yatich Koross</option>
+<option value="358">Annet Nyukuri</option>
+<option value="223">Anthony Kaniaru</option>
+<option value="279">Anthony Ndung'u Kimani</option>
+<option value="295">Antonina Kossy Bor</option>
+<option value="254">Antony Charo Mrima</option>
+<option value="231">Antony Ombwayo</option>
+<option value="275">Asenath Nyaboke Ongeri</option>
+<option value="324">Augustino S.L. Ramadhani</option>
+<option value="58">Barabara Kiprugut Tanui</option>
+<option value="266">Barth J</option>
+<option value="184">Beatrice Thuranira Jaden</option>
+<option value="298">Benard Mweresa Eboso</option>
+<option value="116">Benjamin Patrick Kubo</option>
+<option value="56">Benna Cleya Wamukoya Lutta</option>
+<option value="413">Bernadette Gitari</option>
+<option value="44">Bernard Chunga</option>
+<option value="322">Bernard M. Ngoepe</option>
+<option value="338">Bernard Odongo Matanga Manani</option>
+<option value="367">Bernard Rugut Kipyegon</option>
+<option value="227">Boaz Nathan Olao</option>
+<option value="411">Boniface K Terer</option>
+<option value="390">Brown Kairaria</option>
+<option value="201">Byram Ongaya</option>
+<option value="270">C.O Ong'udi</option>
+<option value="63">Cecil Henry Ethelwood Miller</option>
+<option value="192">Cecilia Wathaiya Githua</option>
+<option value="121">Chanan Singh</option>
+<option value="139">Charles Demoree Newbold</option>
+<option value="313">Charles Gitonga Mbogo</option>
+<option value="303">Charles Kimutai Yano</option>
+<option value="253">Charles Mutungi Kariuki</option>
+<option value="146">Charles Pius Chemuttut</option>
+<option value="152">Charlton Ade'bert Gustavus Lane</option>
+<option value="256">Chrispin Beda Nagillah</option>
+<option value="414">Christine A. Muga</option>
+<option value="297">Christine Atieno Ochieng</option>
+<option value="334">Christine Noontatua Baari</option>
+<option value="194">Christine Wanjiku Meoli</option>
+<option value="354">Christopher Kyania Nzili</option>
+<option value="62">Chunilal Bhagwandas Madan</option>
+<option value="148">Connel J</option>
+<option value="395">Cynthia B. Mayaka</option>
+<option value="205">D.K. Njagi Marete</option>
+<option value="310">Dalmas Omondi Ohungo</option>
+<option value="25">Daniel Kennedy Sultani Aganyanya</option>
+<option value="86">Daniel Kiio Musinga</option>
+<option value="288">Daniel Ogola Ogembo</option>
+<option value="161">David Amilcar Shikomera Majanja</option>
+<option value="32">David Anasi Onyancha</option>
+<option value="53">David Christopher Porter</option>
+<option value="45">David Kenani Maraga</option>
+<option value="291">David Kipyegomen Kemei</option>
+<option value="72">David Maitai Rimita</option>
+<option value="342">David Njagi Nderitu</option>
+<option value="379">Dennis Kizito Ng'wono Magare</option>
+<option value="120">Derek Schofield</option>
+<option value="92">Dermot Joseph Sheridan</option>
+<option value="387">Diana Rachel Kavedza</option>
+<option value="285">Dorah O. Chepkwony</option>
+<option value="393">Dorothy Jemator</option>
+<option value="325">Duncan Tambala</option>
+<option value="150">Edward Alfred Jubal Edmonds</option>
+<option value="349">Edward Karoph Wabwoto</option>
+<option value="193">Edward Muthoga Muriithi</option>
+<option value="101">Edward Nii Adjar Torgbor</option>
+<option value="11">Edward Trevelyan</option>
+<option value="149">Edwards J</option>
+<option value="400">Edwin K. Cheluget</option>
+<option value="12">Effie Owuor</option>
+<option value="328">El Hadji Guisse</option>
+<option value="225">Elija Ogoti Obaga</option>
+<option value="326">Elsie N. Thompson</option>
+<option value="317">Emily R. Kayitesi</option>
+<option value="357">Emmanuel Mutwana Washe</option>
+<option value="9">Emmanuel Okello O'Kubasu</option>
+<option value="250">Enock Chacha Mwita</option>
+<option value="311">Enock Chirchir Cherono</option>
+<option value="49">Erastus Mwaniki Githinji</option>
+<option value="13">Eric John Ewen Law</option>
+<option value="189">Eric Kennedy Okumu Ogola</option>
+<option value="408">Erick Komolo</option>
+<option value="97">Ernest Fredrick Aragon</option>
+<option value="360">Esther Asati</option>
+<option value="212">Esther Nyambura Maina</option>
+<option value="77">Eugene Cotran</option>
+<option value="412">Eunice Ng'ang'a</option>
+<option value="363">Evans Kiago Makori</option>
+<option value="257">Farah S.M Amin</option>
+<option value="332">Fatsah Ougurgouz</option>
+<option value="234">Fatuma sichale</option>
+<option value="107">Festus Azangalala</option>
+<option value="89">Fidulhussein Esmailji Abdullah</option>
+<option value="156">Florence Nyaguthii Muchemi</option>
+<option value="385">Florence Wangari</option>
+<option value="207">Francis Gikonyo</option>
+<option value="307">Francis Mwangi Njoroge</option>
+<option value="377">Francis Rayola Ochieng Odhiambo Olel</option>
+<option value="242">Francis Tuiyott</option>
+<option value="392">Frasia Wangari</option>
+<option value="96">Fred Andago Ochieng</option>
+<option value="262">Fred Kwasi Apaloo</option>
+<option value="353">Fred Ongarora Nyagaka</option>
+<option value="378">Freda Gathiru Mugambi</option>
+<option value="147">Geoffrey Burkitt Whitecomb Rudd</option>
+<option value="420">George A Kashindi</option>
+<option value="113">George Benedict Maina Kariuki</option>
+<option value="129">George Ernest Omondi Tunya</option>
+<option value="421">George K Ashiono</option>
+<option value="312">George Martin Atunga Ong'ondo</option>
+<option value="37">George Matatia Abaleka Dulu</option>
+<option value="431">George Supeyo</option>
+<option value="179">George Vincent Odunga</option>
+<option value="323">Gerard Niungeko</option>
+<option value="76">Gideon P Mbito</option>
+<option value="85">Gilbert Andalya Omwitsa</option>
+<option value="394">Gitonga Kamiti</option>
+<option value="418">Gloria Ogaga</option>
+<option value="191">Grace Lidembu Nzioka</option>
+<option value="397">Grace Mukuha</option>
+<option value="213">Grace Wangui Ngenye-Macharia</option>
+<option value="374">Gregory Mutai</option>
+<option value="4">Gurbachan Singh Pall</option>
+<option value="75">Hannah Magondi Okwengu</option>
+<option value="31">Harold Grant Platt</option>
+<option value="320">Harold R. Nsekela</option>
+<option value="22">Hatari Peter George Waweru</option>
+<option value="182">Hedwig Imbosa Ong'udi</option>
+<option value="138">Hellen Amolo Omondi</option>
+<option value="200">Hellen Seruya Wasilwa</option>
+<option value="382">Heston Mbogo Nyaga</option>
+<option value="132">Hilary Kiplagat Chemitei</option>
+<option value="91">Isaac Charles Cheskaki Wambilyangah</option>
+<option value="100">Isaac Lenaola</option>
+<option value="70">Jackson Kasanga Mulwa</option>
+<option value="429">Jackson Rop</option>
+<option value="95">Jackton Boma Ojwang</option>
+<option value="335">Jacob Kariuki Gakeri</option>
+<option value="352">Jacqueline Akhalemesi Mogeni</option>
+<option value="218">Jacqueline Nancy Kamau</option>
+<option value="232">Jairus Ngaah</option>
+<option value="188">James Aaron Makau</option>
+<option value="108">James Frank Shields</option>
+<option value="388">James Muriuki Macharia</option>
+<option value="318">James Ogoola</option>
+<option value="30">James Onyiego Nyarangi</option>
+<option value="233">James Otieno Odek</option>
+<option value="305">James Otieno Olola</option>
+<option value="59">James Patrick Trainor</option>
+<option value="171">James Rika</option>
+<option value="214">James Wakiaga</option>
+<option value="163">Jamila Mohammed</option>
+<option value="296">Jane Muyoti Onyango</option>
+<option value="255">Janet Nzilani Mulwa</option>
+<option value="245">Jean Bosco Butasi</option>
+<option value="41">Jeanne Wanjiku Gacheche</option>
+<option value="336">Jemima Wanza Keli</option>
+<option value="308">Jemutai Grace Kemei</option>
+<option value="398">Jephthah Njagi</option>
+<option value="294">Jesse Nyagah Njagi</option>
+<option value="87">Jessie Wanjiku Lesiit</option>
+<option value="195">Joel Mwaura Ngugi</option>
+<option value="142">John Alexander Couldrey</option>
+<option value="133">John Amonde Mango</option>
+<option value="114">John Henry Sydney Todd</option>
+<option value="244">John Joseph Mkwawa</option>
+<option value="50">John Luka Osiemo</option>
+<option value="216">John M Mutungi</option>
+<option value="33">John Micheal Khamoni</option>
+<option value="373">John Mugwimi Chigiti</option>
+<option value="272">John Muting'a Mativo</option>
+<option value="21">John Mwangi Gachuhi</option>
+<option value="286">John Nyabuto Onyiego</option>
+<option value="375">John Robert Anuro Wananda</option>
+<option value="35">John walter Onyango Otieno</option>
+<option value="68">John Wycliffe Mwera</option>
+<option value="2">Johnson Evan Gicheru</option>
+<option value="74">Johnson Kiptonui Mitey</option>
+<option value="243">Johnston Busingye</option>
+<option value="316">Johnston Busingye</option>
+<option value="187">Jonathan Bowen Havelock</option>
+<option value="93">Joseph Gregory Nyamu</option>
+<option value="65">Joseph Kiplagat Sergon</option>
+<option value="432">Joseph Louis Onguto</option>
+<option value="196">Joseph Mbalu Mutava</option>
+<option value="348">Joseph Mugo Kamau</option>
+<option value="425">Joseph Ndururi</option>
+<option value="343">Joseph Oguttu Mboya</option>
+<option value="145">Joseph Raphael Karanja</option>
+<option value="20">Joseph Raymond Otieno Masime</option>
+<option value="84">Joseph Vitalis Odero Juma</option>
+<option value="118">Joseph William Alexander Butler-Sloss</option>
+<option value="368">Josephine Wayua Wambua Mong'are</option>
+<option value="40">Joyce Adhiambo Aluoch</option>
+<option value="43">Joyce Nuku Khaminwa</option>
+<option value="424">Joyce Osodo</option>
+<option value="362">Judith Elizabeth Omange</option>
+<option value="15">Justin Saulo Musoke</option>
+<option value="252">Justus Momanyi Bwonwong'a</option>
+<option value="73">Kaburu Bauni</option>
+<option value="36">Kalpana Hasmukhrai Rawal</option>
+<option value="160">Kanyi Kimondo</option>
+<option value="237">Kathurima M'inoti</option>
+<option value="340">Kebira Ocharo</option>
+<option value="103">Kenneth D Potter</option>
+<option value="136">Kenneth Kennedy O'Connor</option>
+<option value="274">Kiarie Waweru Kiarie</option>
+<option value="333">Kibuya Imaana Laibuta</option>
+<option value="329">Kimelabalou Aba</option>
+<option value="319">Laurent Nzosaba</option>
+<option value="384">Lawrence Nthiga Mugambi</option>
+<option value="42">Lawrence Peter Ouna</option>
+<option value="111">Leonard Njagi</option>
+<option value="105">Leslie Gerald Eyre Harris</option>
+<option value="347">Lilian Gathoni Kimani</option>
+<option value="209">Lilian Nabwire Mutende</option>
+<option value="221">Linnet Ndolo</option>
+<option value="309">Loice Chepkemoi Komingoi</option>
+<option value="344">Lucas Leperes Naikuni</option>
+<option value="130">Lucian Basil Ouma</option>
+<option value="265">Lucie Smith J</option>
+<option value="273">Lucy Mwihaki Njuguna</option>
+<option value="300">Lucy Ngima Mbugua</option>
+<option value="389">Lucy Njora</option>
+<option value="215">Lucy Nyambura Gacheru</option>
+<option value="222">Lucy Waithaka</option>
+<option value="289">Lucy Waruguru Gitari</option>
+<option value="69">Luka Kiprotich Kimaru</option>
+<option value="177">Lydia Awino Achode</option>
+<option value="356">Lynette Achieng  Omollo</option>
+<option value="165">M'Nkanata Mburugu Kioga</option>
+<option value="141">Maluki Kitili Mwendwa</option>
+<option value="277">Margaret Njoki Mwangi</option>
+<option value="258">Margaret Waringa Muigai</option>
+<option value="57">Martha Karambu Koome</option>
+<option value="206">Martin Muya</option>
+<option value="47">Mary Atieno Ang'awa</option>
+<option value="306">Mary Clausina Oundo</option>
+<option value="106">Mary Muhanji Kasango</option>
+<option value="217">Mary Muthoni Gitumbi</option>
+<option value="246">Mary Stella Arach-Amoko</option>
+<option value="23">Mathew Guy Muli</option>
+<option value="125">Mathew John Anyara Emukule</option>
+<option value="208">Mathews Nderi Nduma</option>
+<option value="158">Maureen Akinyi Odero</option>
+<option value="220">Maureen Atieno Onyango</option>
+<option value="351">Maxwell Nduiga Gicheru</option>
+<option value="345">Michael Ngolo Mwanyale</option>
+<option value="268">Miles</option>
+<option value="299">Milicent Akinyi Obwa Odeny</option>
+<option value="88">Milton Stephen Asike-Makhandia</option>
+<option value="284">Mitei J</option>
+<option value="102">Mohammed Abdullahi Warsame</option>
+<option value="117">Mohammed Khadhar Ibrahim</option>
+<option value="304">Mohammed Noor Kullow</option>
+<option value="17">Moijo Matayia Ole Keiwua</option>
+<option value="219">Monica Mbaru</option>
+<option value="34">Muga Apondi</option>
+<option value="355">Mugo David Mwangi</option>
+<option value="278">Mugure Thande</option>
+<option value="178">Mumbi Ngugi</option>
+<option value="210">Munyao Sila</option>
+<option value="99">Murugi Geteria Mugo</option>
+<option value="261">Muthoga CA</option>
+<option value="410">Mutiso Makau</option>
+<option value="372">Mwanaisha Saida Shariff</option>
+<option value="430">Nabil M Orina</option>
+<option value="174">Nancy Makokha Barasa</option>
+<option value="426">Ndegwa Wahome</option>
+<option value="301">Nelly Awori Matheka</option>
+<option value="204">Nelson Jorum  Abuodha</option>
+<option value="71">Nicholas Randa Owano Ombija</option>
+<option value="371">Nixon Wanyama Sifuna</option>
+<option value="176">Njoki Susanna Ndungu</option>
+<option value="127">Norbury Dugdale</option>
+<option value="199">Nzioki wa Makau</option>
+<option value="282">Olga Akech Sewe</option>
+<option value="109">Onesmus Kimweli Mutungi</option>
+<option value="202">Onesmus Ndumbuthi Makau</option>
+<option value="248">Onguto Joseph Louis Omondi</option>
+<option value="230">Oscar Amugo Angote</option>
+<option value="26">Pamela Mwikali Tutui</option>
+<option value="369">Patricia Mande Nyaundi</option>
+<option value="381">Patricia Njeri Gichohi</option>
+<option value="280">Patrick J. Okwaro Otieno</option>
+<option value="54">Patrick John Kamau</option>
+<option value="235">Patrick Omwenga Kiage</option>
+<option value="241">Paul K. Kosgei</option>
+<option value="94">Paul Kihara Kariuki</option>
+<option value="124">Paul Kiptenai Kimisoy Arap Birech</option>
+<option value="364">Paul Mwaniki Gachoka</option>
+<option value="391">Pauline Muhanda</option>
+<option value="180">Pauline Nyamweya</option>
+<option value="112">Peter John Hewett</option>
+<option value="228">Peter Muchoki Njoroge</option>
+<option value="383">Peter Mutua Mulwa</option>
+<option value="48">Philip John Ransley</option>
+<option value="7">Philip Kiptoo Tunoi</option>
+<option value="29">Philip Nyamu Waki</option>
+<option value="143">Philomena Mbete Mwilu</option>
+<option value="80">Pritam Singh Brar</option>
+<option value="269">R. Walekhwa</option>
+<option value="239">R.S.C Omolo</option>
+<option value="290">Rachel Biomondo Ngetich</option>
+<option value="203">Radido Stephen Okiyo</option>
+<option value="60">Raj Bahadar Bhandari</option>
+<option value="151">Ransley Samuel Thacker</option>
+<option value="271">Reuben Nyambati Nyakundi</option>
+<option value="3">Riaga Samuel Cornelius Omolo</option>
+<option value="39">Richard Charles Namasaka Kuloba</option>
+<option value="186">Richard Mururu Mwongo</option>
+<option value="16">Richard Otieno Kwach</option>
+<option value="330">Robert Eno</option>
+<option value="251">Robert Kipkoech Limo</option>
+<option value="399">Robert M. Mutuma</option>
+<option value="83">Robert Mugo Mutitu</option>
+<option value="396">Rodney Odhiambo Oluoch</option>
+<option value="198">Rose Edwina Atieno Ougo</option>
+<option value="159">Roseline Lagat-Korir</option>
+<option value="55">Roseline Pauline Vunoro Wendoh</option>
+<option value="64">Roselyn Naliaka Nambuye</option>
+<option value="249">Roselyne Ekirapa Aburili</option>
+<option value="131">Ruth Nekoye Sitati</option>
+<option value="361">S. Musoke</option>
+<option value="144">SA Crabbe</option>
+<option value="155">Said Juma Chitembwe</option>
+<option value="260">Sampson CA</option>
+<option value="427">Samson O. Temu</option>
+<option value="224">Samson Odhiambo Okong'o</option>
+<option value="8">Samuel Elikana Ondari Bosire</option>
+<option value="79">Samuel William Wako Wambuzi</option>
+<option value="376">Samwel Mukira Mohochi</option>
+<option value="162">Samwel Ndungu Mukunya</option>
+<option value="123">Samwel Odhiambo Oguk</option>
+<option value="164">Sankale ole Kantai</option>
+<option value="98">Sarah Chibai Ondeyo</option>
+<option value="240">Scholastica Omondi</option>
+<option value="263">Scriven J</option>
+<option value="27">Sheikh Mohammed Amin</option>
+<option value="327">Silvain Ore</option>
+<option value="78">Sir James Wicks</option>
+<option value="137">Sir John Ainley</option>
+<option value="175">Smokin Charles Wanjala</option>
+<option value="321">Sophia A.B. Akuffo</option>
+<option value="370">Sophie Chebet Chirchir</option>
+<option value="415">Spencer S. Ololchike</option>
+<option value="339">Stella Chemutai Rutto</option>
+<option value="185">Stella Munai Muketi</option>
+<option value="197">Stella Ngali Mutuku</option>
+<option value="238">Stephen Gatembu Kairu</option>
+<option value="226">Stephen Murigi Kibunja</option>
+<option value="276">Stephen Murugu Githinji</option>
+<option value="283">Stephen Nyangau Riechi</option>
+<option value="172">Stewart Mwachiru Madzayo</option>
+<option value="90">Surrender Kumar Sachdeva</option>
+<option value="128">Tank J</option>
+<option value="386">Teresa Achieng Odera</option>
+<option value="293">Teresia Mumbua Matheka</option>
+<option value="359">Theresa Wairimu Murigi</option>
+<option value="264">Thomas J</option>
+<option value="287">Thripsisa Wanjiku Cherere</option>
+<option value="417">Timothy Vikiru</option>
+<option value="46">Tom Mbaluto</option>
+<option value="81">Vinubhai Vithalbhai Patel</option>
+<option value="428">Viola Muthoni</option>
+<option value="166">Violet Khadi Mavisi</option>
+<option value="409">Walter Ongeti</option>
+<option value="419">Walter Ongeti</option>
+<option value="66">Wanjiru Karanja</option>
+<option value="190">Weldon Kipyegon Korir</option>
+<option value="281">Wilfrida Adhiambo Okwany</option>
+<option value="267">Wilkinson-Guillemard</option>
+<option value="140">William Agernon Hotwell Duffus</option>
+<option value="115">William Kipsiro Tuiyot</option>
+<option value="82">William Mbaya</option>
+<option value="211">William Musya Musyoka</option>
+<option value="134">William Ouko</option>
+<option value="122">William Shirley Deverell</option>
+<option value="173">Willy Munywoki Mutunga</option>
+<option value="302">Yuvinalis Maronga Angima</option>
+<option value="18">Zakayo Richard Chesoni</option>
+</select>                                </td>
+                                <td class="label-holder">Court:</td>
+                                <td class="grey-input field">
+                                    <select name="court[]"  id="" style="width:90%" data-placeholder="Choose a Court..." class="chzn-select inp" multiple="multiple">
+<optgroup label="Court Groups">
+<option value="189999">All Courts of Appeal</option>
+<option value="190000">All High Courts</option>
+<option value="190001">All Employment and Labour Relations Courts</option>
+<option value="190002">Environmental And Land Court</option>
+</optgroup>
+<optgroup label="Supreme Court">
+<option value="23">Supreme Court of Kenya</option>
+</optgroup>
+<optgroup label="Court of Appeal">
+<option value="57">Court of Appeal at Busia</option>
+<option value="22">Court of Appeal at Eldoret</option>
+<option value="56">Court of Appeal at Kisii</option>
+<option value="10">Court of Appeal at Kisumu</option>
+<option value="11">Court of Appeal at Malindi</option>
+<option value="47">Court of Appeal at Mombasa</option>
+<option value="9">Court of Appeal at Nairobi</option>
+<option value="21">Court of Appeal at Nakuru</option>
+<option value="20">Court of Appeal at Nyeri</option>
+</optgroup>
+<optgroup label="High Court">
+<option value="71">High Court at Bomet</option>
+<option value="15">High Court at Bungoma</option>
+<option value="14">High Court at Busia</option>
+<option value="80">High Court at Chuka</option>
+<option value="13">High Court at Eldoret</option>
+<option value="8">High Court at Embu</option>
+<option value="29">High Court at Garissa</option>
+<option value="136">High Court at Garsen</option>
+<option value="38">High Court at Homabay</option>
+<option value="195">High Court at Iten</option>
+<option value="87">High Court at Kabarnet</option>
+<option value="82">High Court at Kajiado</option>
+<option value="16">High Court at Kakamega</option>
+<option value="78">High Court at Kapenguria</option>
+<option value="192">High Court at Kapsabet</option>
+<option value="4">High Court at Kericho</option>
+<option value="39">High Court at Kerugoya</option>
+<option value="86">High Court at Kiambu</option>
+<option value="175">High Court at Kilgoris</option>
+<option value="24">High Court at Kisii</option>
+<option value="3">High Court at Kisumu</option>
+<option value="17">High Court at Kitale</option>
+<option value="58">High Court at Kitui</option>
+<option value="85">High Court at Kwale</option>
+<option value="40">High Court at Lodwar</option>
+<option value="5">High Court at Machakos</option>
+<option value="88">High Court at Makueni</option>
+<option value="7">High Court at Malindi</option>
+<option value="81">High Court at Marsabit</option>
+<option value="6">High Court at Meru</option>
+<option value="63">High Court at Migori</option>
+<option value="1">High Court at Mombasa</option>
+<option value="41">High Court at Murang'a</option>
+<option value="19">High Court at Nairobi (Milimani Commercial Courts Commercial and Tax Division)</option>
+<option value="18">High Court at Nairobi (Milimani Law Courts)</option>
+<option value="66">High Court at Naivasha</option>
+<option value="2">High Court at Nakuru</option>
+<option value="83">High Court at Nanyuki</option>
+<option value="65">High Court at Narok</option>
+<option value="89">High Court at Nyahururu</option>
+<option value="79">High Court at Nyamira</option>
+<option value="12">High Court at Nyeri</option>
+<option value="77">High Court at Siaya</option>
+<option value="133">High Court at Thika</option>
+<option value="172">High Court at Vihiga</option>
+<option value="62">High Court at Voi</option>
+</optgroup>
+<optgroup label="Employment and Labour Relations">
+<option value="138">Employment and Labour Relations Court at Bungoma</option>
+<option value="134">Employment and Labour Relations Court at Eldoret</option>
+<option value="169">Employment and Labour Relations Court at Garissa</option>
+<option value="69">Employment and Labour Relations Court at Kericho</option>
+<option value="34">Employment and Labour Relations Court at Kisumu</option>
+<option value="170">Employment and Labour Relations Court at Machakos</option>
+<option value="137">Employment and Labour Relations Court at Malindi</option>
+<option value="139">Employment and Labour Relations Court at Meru</option>
+<option value="33">Employment and Labour Relations Court at Mombasa</option>
+<option value="27">Employment and Labour Relations Court at Nairobi</option>
+<option value="45">Employment and Labour Relations Court at Nakuru</option>
+<option value="35">Employment and Labour Relations Court at Nyeri</option>
+</optgroup>
+<optgroup label="East African Court of Justice (EACJ)">
+<option value="26">East African Court of Justice</option>
+</optgroup>
+<optgroup label="IICDRC">
+<option value="28">Interim Independent Constitutional Dispute Resolution Court</option>
+</optgroup>
+<optgroup label="COAEA">
+<option value="30">Court of Appeal for East Africa</option>
+</optgroup>
+<optgroup label="JMVB">
+<option value="31">Judges and Magistrates Vetting Board</option>
+</optgroup>
+<optgroup label="CAT">
+<option value="50">Dispute Resolution Committee (IEBC)</option>
+</optgroup>
+<optgroup label="African Court on Human and Peoplesâ Rights">
+<option value="144">African Court on Human and Peoplesâ Rights</option>
+</optgroup>
+<optgroup label="Magistrate's Court">
+<option value="145">Anti- Corruption Magistrateâs Court</option>
+<option value="52">Election Petition in Magistrate Courts</option>
+<option value="173">Magistrate Courts</option>
+<option value="174">Small Claims</option>
+</optgroup>
+<optgroup label="Tribunal">
+<option value="163">Business Premises Rent Tribunal</option>
+<option value="196">Capital Markets Tribunal</option>
+<option value="32">Commissions and AdHoc Tribunals</option>
+<option value="161">Communication and Multimedia Appeals Tribunal</option>
+<option value="162">Competent Authority Tribunal</option>
+<option value="160">Competition Tribunal</option>
+<option value="143">Cooperative Tribunal</option>
+<option value="159">Education Appeals Tribunal</option>
+<option value="158">Energy & Petroleum Tribunal</option>
+<option value="157">HIV and AIDS Tribunal</option>
+<option value="141">Industrial Property Tribunal</option>
+<option value="167">Insurance Appeals Tribunal</option>
+<option value="202">Land Acquisition Tribunal</option>
+<option value="154">Legal Education Appeals Tribunal</option>
+<option value="153">Micro and Small Enterprises Tribunal</option>
+<option value="147">National Civil Aviation Administrative Review Tribunal</option>
+<option value="25">National Environment Tribunal - Nairobi</option>
+<option value="51">Political Parties Disputes Tribunal</option>
+<option value="152">Public Private Partnership Petition Committee  Tribunal</option>
+<option value="151">Rent Restriction Tribunal</option>
+<option value="150">Sports Disputes Tribunal</option>
+<option value="148">Standards Tribunal</option>
+<option value="149">State Corporations Appeals Tribunal</option>
+<option value="140">Tax Appeal Tribunal</option>
+<option value="142">Transport Licensing Appeals Board Tribunal</option>
+</optgroup>
+<optgroup label="Environment and Land Court">
+<option value="68">Environment and Land Court at Bungoma</option>
+<option value="75">Environment and Land Court at Busia</option>
+<option value="122">Environment and Land Court at Chuka</option>
+<option value="46">Environment and Land Court at Eldoret</option>
+<option value="123">Environment and Land Court at Embu</option>
+<option value="124">Environment and Land Court at Garissa</option>
+<option value="189">Environment and Land Court at Homa Bay</option>
+<option value="188">Environment and Land Court at Isiolo</option>
+<option value="194">Environment and Land Court at Iten</option>
+<option value="125">Environment and Land Court at Kajiado</option>
+<option value="126">Environment and Land Court at Kakamega</option>
+<option value="193">Environment and Land Court at Kapsabet</option>
+<option value="67">Environment and Land Court at Kericho</option>
+<option value="70">Environment and Land Court at Kerugoya</option>
+<option value="176">Environment and Land Court at Kilgoris</option>
+<option value="55">Environment and Land Court at Kisii</option>
+<option value="60">Environment and Land Court at Kisumu</option>
+<option value="61">Environment and Land Court at Kitale</option>
+<option value="191">Environment and Land Court at Kitui</option>
+<option value="132">Environment and Land Court at Kwale</option>
+<option value="84">Environment and Land Court at Machakos</option>
+<option value="127">Environment and Land Court at Makueni</option>
+<option value="48">Environment and Land Court at Malindi</option>
+<option value="76">Environment and Land Court at Meru</option>
+<option value="128">Environment and Land Court at Migori</option>
+<option value="53">Environment and Land Court at Mombasa</option>
+<option value="129">Environment and Land Court at Muranga</option>
+<option value="54">Environment and Land Court at Nairobi</option>
+<option value="59">Environment and Land Court at Nakuru</option>
+<option value="190">Environment and Land Court at Nanyuki</option>
+<option value="130">Environment and Land Court at Narok</option>
+<option value="135">Environment and Land Court at Nyahururu</option>
+<option value="177">Environment and Land Court at Nyamira</option>
+<option value="131">Environment and Land Court at Nyandarua</option>
+<option value="49">Environment and Land Court at Nyeri</option>
+<option value="183">Environment and Land Court at Siaya</option>
+<option value="90">Environment and Land Court at Thika</option>
+<option value="184">Environment and Land Court at Vihiga</option>
+<option value="203">Environment and Land Court at Voi</option>
+</optgroup>
+<optgroup label="Kadhis Courts">
+<option value="104">Kadhis Court at Bungoma</option>
+<option value="164">Kadhis Court at Busia</option>
+<option value="97">Kadhis Court at Eldoret</option>
+<option value="103">Kadhis Court at Garissa</option>
+<option value="111">Kadhis Court at Garissa (Dadaab)</option>
+<option value="118">Kadhis Court at Garsen</option>
+<option value="166">Kadhis Court at Hamisi</option>
+<option value="99">Kadhis Court at Hola</option>
+<option value="168">Kadhis Court at Homabay</option>
+<option value="93">Kadhis Court at Isiolo</option>
+<option value="113">Kadhis Court at Kajiado</option>
+<option value="117">Kadhis Court at Kakamega</option>
+<option value="146">Kadhis Court at Kericho</option>
+<option value="96">Kadhis Court at Kilifi</option>
+<option value="94">Kadhis Court at Kisumu</option>
+<option value="120">Kadhis Court at Kitale</option>
+<option value="109">Kadhis Court at Kitui</option>
+<option value="102">Kadhis Court at Kwale</option>
+<option value="100">Kadhis Court at Lamu</option>
+<option value="119">Kadhis Court at Lodwar (Kakuma)</option>
+<option value="110">Kadhis Court at Machakos</option>
+<option value="95">Kadhis Court at Malindi</option>
+<option value="108">Kadhis Court at Mandera</option>
+<option value="116">Kadhis Court at Marsabit</option>
+<option value="171">Kadhis Court at Meru</option>
+<option value="112">Kadhis Court at Migori</option>
+<option value="74">Kadhis Court at Mombasa</option>
+<option value="98">Kadhis Court at Moyale</option>
+<option value="115">Kadhis Court at Murang'a</option>
+<option value="91">Kadhis Court at Nairobi (Kibera Law Courts)</option>
+<option value="92">Kadhis Court at Nairobi (Milimani Commercial Court)</option>
+<option value="106">Kadhis Court at Nakuru</option>
+<option value="101">Kadhis Court at Nyeri</option>
+<option value="114">Kadhis Court at Thika</option>
+<option value="105">Kadhis Court at Voi</option>
+<option value="121">Kadhis Court at Wajir</option>
+<option value="107">Kadhis Court at Wajir (Habaswein)</option>
+<option value="165">Kadhiâs Court at Garbatulla</option>
+</optgroup>
+</select>                                </td>   
+                            </tr>
+                            <tr>
+                                <td class="label-holder"></td>
+                                <td class="field"><br/>&nbsp;&nbsp;Delivery Date Range:</td>
+                                <td class="label-holder">&nbsp;</td>
+                                <td class="field">
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="label-holder">From:</td>
+                                <td class="field">
+<input type="text" name="date_from" value=""  id="date_from" class="datepicker inp"  />
+                                </td>
+<!--                                <td class="label-holder">
+                                    Case Year:
+                                </td>
+                                <td class="field">  
+                                    <select name="year" id="year"  class="inp" >
+                                        <option value="" selected="">All</option>
+                                         <option  value="2025">2025</option> <option  value="2024">2024</option> <option  value="2023">2023</option> <option  value="2022">2022</option> <option  value="2021">2021</option> <option  value="2020">2020</option> <option  value="2019">2019</option> <option  value="2018">2018</option> <option  value="2017">2017</option> <option  value="2016">2016</option> <option  value="2015">2015</option> <option  value="2014">2014</option> <option  value="2013">2013</option> <option  value="2012">2012</option> <option  value="2011">2011</option> <option  value="2010">2010</option> <option  value="2009">2009</option> <option  value="2008">2008</option> <option  value="2007">2007</option> <option  value="2006">2006</option> <option  value="2005">2005</option> <option  value="2004">2004</option> <option  value="2003">2003</option> <option  value="2002">2002</option> <option  value="2001">2001</option> <option  value="2000">2000</option> <option  value="1999">1999</option> <option  value="1998">1998</option> <option  value="1997">1997</option> <option  value="1996">1996</option> <option  value="1995">1995</option> <option  value="1994">1994</option> <option  value="1993">1993</option> <option  value="1992">1992</option> <option  value="1991">1991</option> <option  value="1990">1990</option> <option  value="1989">1989</option> <option  value="1988">1988</option> <option  value="1987">1987</option> <option  value="1986">1986</option> <option  value="1985">1985</option> <option  value="1984">1984</option> <option  value="1983">1983</option> <option  value="1982">1982</option> <option  value="1981">1981</option> <option  value="1980">1980</option> <option  value="1979">1979</option> <option  value="1978">1978</option> <option  value="1977">1977</option> <option  value="1976">1976</option> <option  value="1975">1975</option> <option  value="1974">1974</option> <option  value="1973">1973</option> <option  value="1972">1972</option> <option  value="1971">1971</option> <option  value="1970">1970</option> <option  value="1969">1969</option> <option  value="1968">1968</option> <option  value="1967">1967</option> <option  value="1966">1966</option> <option  value="1965">1965</option> <option  value="1964">1964</option> <option  value="1963">1963</option> <option  value="1962">1962</option> <option  value="1961">1961</option> <option  value="1960">1960</option> <option  value="1959">1959</option> <option  value="1958">1958</option> <option  value="1957">1957</option> <option  value="1956">1956</option> <option  value="1955">1955</option> <option  value="1954">1954</option> <option  value="1953">1953</option> <option  value="1952">1952</option> <option  value="1951">1951</option> <option  value="1950">1950</option> <option  value="1949">1949</option> <option  value="1948">1948</option> <option  value="1947">1947</option> <option  value="1946">1946</option> <option  value="1945">1945</option> <option  value="1944">1944</option> <option  value="1943">1943</option> <option  value="1942">1942</option> <option  value="1941">1941</option> <option  value="1940">1940</option>                                    </select>            
+                                </td>-->
+                              <td class="label-holder">
+                                    To:
+                                </td>
+                                <td class="field">
+<input type="text" name="date_to" value=""  id="date_to" class="datepicker inp"  />                                </td>
+                            
+                            </tr>
+
+                            <tr>
+                             
+                                <td class="label-holder">
+                                    &nbsp;
+                                </td>
+                                <td class="field">
+                                    <input style='margin-left:7px;' class="search_bt case-search-button" value="Search"  name="submit" type="submit">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+</form>
+                </div>
+
+            </div>
+            <!--End advanced search -->
+
+
+            <!--Google custom search-->
+            <div class="tab-pane fade active in" id="boolean-search">
+                <!--Search box-->
+                <!--<div id='cse' style='width: 100%;'>Loading</div>
+                 <script src='//www.google.com/jsapi' type='text/javascript'></script>
+                <script type='text/javascript'>
+                    google.load('search', '1', {language: 'en', style: google.loader.themes.V2_DEFAULT});
+                    google.setOnLoadCallback(function() {
+                        var customSearchOptions = {};
+                        var orderByOptions = {};
+                        //orderByOptions['keys'] = [{label: 'Relevance', key: ''} , {label: 'Date', key: 'date'}];
+                        customSearchOptions['enableOrderBy'] = false;
+                        customSearchOptions['orderByOptions'] = orderByOptions;
+                        customSearchOptions['overlayResults'] = false;
+                        var customSearchControl = new google.search.CustomSearchControl('011980543104213876406:bigfwpuz1oe', customSearchOptions);
+                        customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+                        var options = new google.search.DrawOptions();
+                        options.setAutoComplete(true);
+                        customSearchControl.draw('cse', options);
+                    }, true);
+                </script>-->
+				 <script>
+				  (function() {
+					var cx = '006079857380284091498:m11jfb8ujag';
+					var gcse = document.createElement('script');
+					gcse.type = 'text/javascript';
+					gcse.async = true;
+					gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+					var s = document.getElementsByTagName('script')[0];
+					s.parentNode.insertBefore(gcse, s);
+				  })();
+				</script>
+                <style type='text/css'>
+                    .gsc-control-cse {
+                        font-family: Arial, sans-serif;
+                        border-color: #FFFFFF;
+                        background-color: #FFFFFF;
+
+                    }
+                    .gsc-control-cse .gsc-table-result {
+                        font-family: Arial, sans-serif;
+                    }
+                    input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
+                        border-color: #D9D9D9;
+                    }
+                    input.gsc-search-button, input.gsc-search-button:hover, input.gsc-search-button:focus {
+                        border-color: #666666;
+                        background-color: #CECECE;
+                        background-image: none;
+                        filter: none;
+
+                    }
+                    .gsc-tabHeader.gsc-tabhInactive {
+                        border-color: #FF9900;
+                        background-color: #FFFFFF;
+                    }
+                    .gsc-tabHeader.gsc-tabhActive {
+                        border-color: #E9E9E9;
+                        background-color: #E9E9E9;
+                        border-bottom-color: #FF9900
+                    }
+                    .gsc-tabsArea {
+                        border-color: #FF9900;
+                    }
+                    .gsc-webResult.gsc-result, .gsc-results .gsc-imageResult {
+                        border-color: #FFFFFF;
+                        background-color: #FFFFFF;
+                    }
+                    .gsc-webResult.gsc-result:hover, .gsc-imageResult:hover {
+                        border-color: #FFFFFF;
+                        background-color: #FFFFFF;
+                    }
+                    .gs-webResult.gs-result a.gs-title:link, .gs-webResult.gs-result a.gs-title:link b, .gs-imageResult a.gs-title:link, .gs-imageResult a.gs-title:link b  {
+                        color: #900;
+                    }
+                    .gs-webResult.gs-result a.gs-title:visited, .gs-webResult.gs-result a.gs-title:visited b, .gs-imageResult a.gs-title:visited, .gs-imageResult a.gs-title:visited b {
+                        color: #900;
+                    }
+                    .gs-webResult.gs-result a.gs-title:hover, .gs-webResult.gs-result a.gs-title:hover b, .gs-imageResult a.gs-title:hover, .gs-imageResult a.gs-title:hover b {
+                        color: #900;
+                    }
+                    .gs-webResult.gs-result a.gs-title:active, .gs-webResult.gs-result a.gs-title:active b, .gs-imageResult a.gs-title:active, .gs-imageResult a.gs-title:active b {
+                        color: #900;
+                    }
+                    .gsc-cursor-page {
+                        color: #0000CC;
+                    }
+                    a.gsc-trailing-more-results:link {
+                        color: #900;
+                    }
+                    .gs-webResult .gs-snippet, .gs-imageResult .gs-snippet, .gs-fileFormatType {
+                        color: #000000;
+                    }
+                    .gs-webResult div.gs-visibleUrl, .gs-imageResult div.gs-visibleUrl {
+                        color: #008000;
+                    }
+                    .gs-webResult div.gs-visibleUrl-short {
+                        color: #008000;
+                    }
+                    .gs-webResult div.gs-visibleUrl-short  {
+                        display: none;
+                    }
+                    .gs-webResult div.gs-visibleUrl-long {
+                        display: block;
+                    }
+                    .gs-promotion div.gs-visibleUrl-short {
+                        display: none;
+                    }
+                    .gs-promotion div.gs-visibleUrl-long  {
+                        display: block;
+                    }
+                    .gsc-cursor-box {
+                        border-color: #FFFFFF;
+                    }
+                    .gsc-results .gsc-cursor-box .gsc-cursor-page {
+                        border-color: #E9E9E9;
+                        background-color: #FFFFFF;
+                        color: #0000CC;
+                    }
+                    .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+                        border-color: #FF9900;
+                        background-color: #FFFFFF;
+                        color: #0000CC;
+                    }
+                    .gsc-webResult.gsc-result.gsc-promotion {
+                        border-color: #336699;
+                        background-color: #FFFFFF;
+                    }
+                    .gsc-completion-title {
+                        color: #0000CC;
+                    }
+                    .gsc-completion-snippet {
+                        color: #000000;
+                    }
+                    .gs-promotion a.gs-title:link,.gs-promotion a.gs-title:link *,.gs-promotion .gs-snippet a:link  {
+                        color: #0000CC;
+                    }
+                    .gs-promotion a.gs-title:visited,.gs-promotion a.gs-title:visited *,.gs-promotion .gs-snippet a:visited {
+                        color: #0000CC;
+                    }
+                    .gs-promotion a.gs-title:hover,.gs-promotion a.gs-title:hover *,.gs-promotion .gs-snippet a:hover  {
+                        color: #0000CC;
+                    }
+                    .gs-promotion a.gs-title:active,.gs-promotion a.gs-title:active *,.gs-promotion .gs-snippet a:active {
+                        color: #0000CC;
+                    }
+                    .gs-promotion .gs-snippet, .gs-promotion .gs-title .gs-promotion-title-right, .gs-promotion .gs-title .gs-promotion-title-right * {
+                        color: #000000;
+                    }
+                    .gs-promotion .gs-visibleUrl,.gs-promotion .gs-visibleUrl-short  {
+                        color: #008000;
+                    }
+
+                    .gsc-input-box {
+                        height:35px;
+                    }
+
+                </style>
+
+                <div><gcse:search></gcse:search>
+                    <!--<p style="font-size:15px; color:#FF0000">Notice: Google Custom Search under Maintenance, please use Advanced Search</p><br>
+					<p style="font-size:15px;">You can visit our old Case Search Database by <a href="http://www.kenyalaw.org/CaseSearch/" target="_blank">clicking here</a></p>-->
+                </div>
+                <div>
+				<p style="font-size:15px;"><b>You can visit the new Caselaw Database page <a href="https://new.kenyalaw.org/judgments/" target="_blank">here.</a></b></p>
+                    <p style="font-size:15px;">Looking for legal information from other jurisdictions? Go to:<br><a href="https://africanlii.org/" target="_blank">www.africanlii.org</a> <br><a href="https://www.bailii.org/form/search_cases.html" target="_blank">www.bailii.org/form/search_cases.html</a> <br><a href="http://www.worldlii.org" target="_blank">www.worldlii.org</a></p>
+                </div>
+
+            </div>
+
+            <!--End Google custom search-->
+
+
+            <!--Help -->
+            <div class="tab-pane fade" id="case-help">
+                <!--
+                     <h4>1. General Search</h4>
+                                             <p>The General Search  is simple, just type in  whatever you are looking for, case name, number, 
+                                             judges name, cause list, date  etc, click the search button to the right or hit the enter key 
+                                             on  your keyboard and it will return cases with content that is  relevant to your search.</p>
+                                                                                                     
+                                             <p>To make your search more useful keep your search  criteria simple. and use the words that 
+                                             are most  likely to appear. </p>
+                                                                                     
+                                             <p>Using only one or two search keywords will yield a high number of results &ndash; using more
+                                             search keywords significantly reduces the number of results yielded.</p>
+                                                                                             
+                                             <p>Remember every word matters.  Generally, all the words you put in the query will be used. 
+                                             The search is case  insensitive and punctuation are generally ignored but ensure all your 
+                                             search terms are spelt correctly.</p>
+                                                                                     
+                                             <p>Searching in general mode is suited for  finding any or all cases that contain a given word, 
+                                             set of words or phrase  used.</p>
+                -->
+
+                <h4>1. Advanced Search</h4>
+                <p>
+                    Advanced Search mode  is suitable for finding a particular case when you have details that describe the  
+                    case at hand e.g. (names of parties, case number, case year etc)</p>
+
+                <p>To find a case according to its meta data (names of parties, case number, and date of delivery, case year etc) 
+                    one need not fill in all  the fields. You may use any one or more search criteria; search using whatever 
+                    information you have.</p>
+
+
+                <p>Using only one or two search criteria  will yield a high number of results &ndash; using more 
+                    search criteria significantly  reduces the number of results yielded.</p>
+
+
+                <p>When searching for a case using the  names of parties or judges,citation or advocates, you need not
+                    fill in all the names. Any  or two names of either party will suffice. However, if you are searching 
+                    for  a case by case number, you need to type in the the exact case number you want matched </p> 
+
+
+                <p>Ensure all your search terms are spelt  correctly. Try to use alternative spellings of names, words or
+                    acronyms  appearing in your search terms.</p>
+            </div>
+            <!--End Help -->
+
+
+
+            <div id="searching" style="width:100%; display:none;">
+                <div style="color:#900">
+                    <p style="padding:px"><img src="https://kenyalaw.org/caselaw/assets/action.gif" style="align:left" /> Please Wait. Searching ...</p>
+                </div>
+            </div>  
+
+
+        </div> 
+        <div class="float" style="float:none;width:100%;height:1;zoom:1"></div>
+    </div>
+
+    <!---End page content----->
+    <div class="float" style="float:none;width:100%;height:1;zoom:1"></div>
+    <p> &nbsp; </p> <p> &nbsp; </p>
+</div>
+
+<!--End new tab content-->
+
+				   <!--End Main Content -->
+				   
+				     <div id="query_echo"></div>
+					<div id="data"></div>
+					<div id="linky" style="margin-left: 5em;"></div>
+					<div id="viewerStatus" style="padding: 5px; background-color: #eee; display: none"></div>
+					<div id="viewerCanvas"></div>
+		              </div>
+				  </div>
+				  
+			
+		       </div>
+	  </div>
+	
+	
+	       <div class="white-bottom inside-page-footer">
+     <div class="container">
+	       <div class="row">
+		   <div class="span8 footer-left">
+		   
+		   <p>Except for some material which is expressly stated to be under a specified <a href='https://creativecommons.org/' target="_blank">Creative Commons</a> license, the contents of 
+		   this website are in the public domain and free from any copyright restrictions</p>
+	          
+	        	  <ul id="footer-links">
+				    <li><a href="https://www.kenyalaw.org/">Home</a></li>
+				    <li><a href="https://www.kenyalaw.org/kl/index.php?id=115">About Us</a></li>
+					<li><a href="https://www.kenyalaw.org/kl/index.php?id=2287">Our Partners</a></li>
+					<li><a href="https://www.kenyalaw.org/kl/index.php?id=133">Careers</a></li>
+					<li><a href="https://www.kenyalaw.org/kl/index.php?id=3158">Contact Us</a></li>
+				    <li><a href="https://www.kenyalaw.org/kl/index.php?id=2159">Sitemap</a></li>
+				</ul>
+				
+		  </div>
+		  
+		   <div class="span2">
+		          <div class="social-icons">
+				      Follow us:<br>
+						      <div class="social-network">
+							    <p class="social-network">
+								   <a href="https://www.facebook.com/MyKenyaLaw" target="_blank"><img src="https://kenyalaw.org/caselaw/addons/themes/default/img/facebook.jpg" alt="facebook" /></a>
+						            <a href="https://twitter.com/MyKenyaLaw" target="_blank"><img src="https://kenyalaw.org/caselaw/addons/themes/default/img/twitter.jpg" alt="twitter" /></a>
+						            <a href="https://www.youtube.com/MyKenyaLaw" target="_blank"><img src="https://kenyalaw.org/caselaw/addons/themes/default/img/youtube.jpg" alt="youtube" /></a>
+								  </p>
+							  </div>
+				   </div>
+		  </div>
+		  
+		  <div class="span2">
+		      <div class="creative-commons">
+		      <a href="https://www.kenyalaw.org/kl/index.php?id=2161"><img src="https://kenyalaw.org/caselaw/addons/themes/default/img/cc-logo.jpg" alt="cc-logo" /></a>
+			  </div>
+		  </div>
+		  
+		  </div>
+	</div>
+   </div> 
+   
+       <div class="inside-page-footer">
+		   <div class="container">
+			   <div class="row">
+					<div class="span12">
+							  <footer >
+								<p class="pull-right"><a href="#"><img src="https://kenyalaw.org/caselaw/addons/themes/default/img/back-to-top.gif" alt="back-to-top" /></a></p>
+								   <p>&copy; 2025 National Council for Law Reporting (Kenya Law). &middot; <a href="https://www.kenyalaw.org/kl/index.php?id=2161">Creative Commons</a> &middot; <a href="https://www.kenyalaw.org/kl/index.php?id=390">Privacy Policy &amp; Disclaimer</a>  </p>
+							  </footer>
+					</div>
+			   </div>
+		   </div>
+		 </div>
+
+    <!--Le javascript-->
+    <!--Placed at the end of the document so the pages load faster-->
+	<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/jquery.js"></script>
+	<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/bootstrap-transition.js"></script>
+	<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/bootstrap-alert.js"></script>
+	<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/bootstrap-modal.js"></script>
+	<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/bootstrap-dropdown.js"></script>
+	<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/bootstrap-dropdown.js"></script>
+	<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/bootstrap-scrollspy.js"></script>
+	<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/bootstrap-tab.js"></script>
+	<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/bootstrap-tooltip.js"></script>
+	<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/bootstrap-popover.js"></script>
+	<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/bootstrap-button.js"></script>
+	<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/bootstrap-collapse.js"></script>
+	<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/bootstrap-carousel.js"></script>
+	<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/bootstrap-typeahead.js"></script>
+	
+		<!--the jScrollPane script-->
+	<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/jquery.mousewheel.js"></script>
+	<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/jquery.contentcarousel.js"></script>
+	
+    <script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/jquery-ui-1.8.3.js"></script>
+	<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/jquery-ui-1.9.2.custom.min.js"></script>
+	<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/chosen.jquery.min.js"></script>
+    <!--<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/custom.js"></script>-->
+      
+	 <!--Expanding search bar -->
+	 <script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/classie.js"></script>
+	 <script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/uisearch.js"></script>
+
+	 <script>
+		new UISearch( document.getElementById( 'sb-search' ) );
+	 </script>
+	<!--End expanding search -->
+	  
+	  <script type="text/javascript">
+			 jQuery(document).ready(function() {
+			var config = {
+			  '.chzn-select'           : {},
+			  '.chzn-select-deselect'  : {allow_single_deselect:true},
+			  '.chzn-select-no-single' : {disable_search_threshold:10},
+			  '.chzn-select-no-results': {no_results_text:'Oops, nothing found!'},
+			  '.chzn-select-width'     : {width:"95%"}
+			}
+			for (var selector in config) {
+			  $(selector).chosen(config[selector]);
+			}
+			jQuery('#court_chzn').removeAttr('style').css('width','100%');
+			jQuery('#judge_chzn').removeAttr('style').css('width','100%');
+			jQuery("input.datepicker").datepicker({
+				 changeMonth: true,
+				 changeYear: true,
+				 dateFormat:'dd M yy',
+				 yearRange: "1925:2035"
+			  });
+
+			  });
+    </script>
+  
+
+	
+	
+	<!----Fire Jquery scroll pane--->
+	
+	<script type="text/javascript">
+			$('#ca-container').contentcarousel();
+	</script>
+	
+	<script>
+	   $('#myTab a').click(function (e) {
+		  e.preventDefault();
+		  $(this).tab('show');
+		})
+	</script>
+	<script type="text/javascript" src="https://kenyalaw.org/caselaw/addons/themes/default/js/holder.js"></script>			
+  </body>
+</html>
+
+
+<!--New code for home.html-->
+
+
