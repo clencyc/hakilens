@@ -160,7 +160,9 @@ def summarize_case(case_id: int, model: str = Query("gpt-4o-mini")) -> dict[str,
 		)
 		summary = resp.choices[0].message.content.strip()
 		c.summary = summary
-		session.flush()
+		from .db import db_write_lock
+		with db_write_lock:
+			session.flush()
 		return {"case_id": c.id, "summary": summary}
 
 
