@@ -79,6 +79,21 @@ Open the test page: `http://localhost:8000/`
 
 Open auto-docs: `http://localhost:8000/docs`
 
+## Deployment
+
+### Render
+The app is configured for Render deployment with:
+- `Procfile`: Uses uvicorn directly for ASGI compatibility
+- `app.py`: Root-level entry point
+- Environment variables: Set your AI API keys in Render dashboard
+
+### Other Platforms
+For other platforms, ensure you're using an ASGI server:
+- **Heroku**: Use the Procfile as-is
+- **Railway**: Use the Procfile as-is  
+- **DigitalOcean App Platform**: Use the Procfile as-is
+- **AWS/GCP**: Use uvicorn or gunicorn with uvicorn workers
+
 Endpoints:
 - POST `/scrape/url?url=...`
   - Scrapes a case detail page or listing (auto-detects), returns saved case IDs.
