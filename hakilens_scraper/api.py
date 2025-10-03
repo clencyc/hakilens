@@ -47,9 +47,13 @@ _cors_origins = [
 	"http://localhost:3000",
 	"http://localhost:8000",
 	"http://127.0.0.1:3000",
+	"https://www.hakichain.co.ke"
 	"http://127.0.0.1:8000",
 	"https://f9e4cc818023.ngrok-free.app",
 	"http://f9e4cc818023.ngrok-free.app",
+	"https://hakichain-v2-tau.vercel.app"
+	"https://hakichain-v2-80w6zdu88-clara-clency.vercel.app",
+	"*",  # Allow all origins for development - be more restrictive in production
 ]
 app.add_middleware(
 	CORSMiddleware,
