@@ -1,2 +1,15 @@
+echo "# Environment files
 .env
-env
+.env.local
+.env.*.local
+env/
+venv/
+
+# API Keys and secrets
+*.key
+secrets.json
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3" >> .gitignore
